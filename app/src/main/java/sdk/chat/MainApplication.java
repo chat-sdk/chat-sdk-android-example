@@ -6,17 +6,21 @@ import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.disposables.Disposable;
 import sdk.chat.android.live.R;
+import sdk.chat.core.hook.Executor;
+import sdk.chat.core.hook.Hook;
+import sdk.chat.core.hook.HookEvent;
 import sdk.chat.core.session.ChatSDK;
 import sdk.chat.core.utils.Device;
 import sdk.chat.firebase.adapter.module.FirebaseModule;
 import sdk.chat.firebase.push.FirebasePushModule;
 import sdk.chat.firebase.ui.FirebaseUIModule;
 import sdk.chat.firebase.upload.FirebaseUploadModule;
-import sdk.chat.profile.pictures.ProfilePicturesModule;
+//import sdk.chat.profile.pictures.ProfilePicturesModule;
 import sdk.chat.ui.extras.ExtrasModule;
 import sdk.chat.ui.module.UIModule;
 
@@ -37,7 +41,7 @@ public class MainApplication extends Application {
     }
 
     public void firebase() throws Exception {
-        String rootPath = "firebase";
+        String rootPath = "pre_2";
 
         ChatSDK.builder()
                 .setGoogleMaps("AIzaSyCwwtZrlY9Rl8paM0R6iDNBEit_iexQ1aE")
@@ -55,7 +59,6 @@ public class MainApplication extends Application {
                         FirebaseModule.builder()
                                 .setFirebaseRootPath(rootPath)
                                 .setDisableClientProfileUpdate(false)
-                                .setEnableCompatibilityWithV4(true)
                                 .setDevelopmentModeEnabled(true)
                                 .build()
                 )
@@ -71,7 +74,8 @@ public class MainApplication extends Application {
                 // Add modules to handle file uploads, push notifications
                 .addModule(FirebaseUploadModule.shared())
                 .addModule(FirebasePushModule.shared())
-                .addModule(ProfilePicturesModule.shared())
+//                .addModule(ProfilePicturesModule.shared())
+//                .addModule()
 
                 .addModule(ExtrasModule.builder(config -> {
                     if (Device.honor(this)) {
@@ -99,6 +103,11 @@ public class MainApplication extends Application {
             t.printStackTrace();
         });
 
+        ChatSDK.hook().addHook(Hook.sync(hashMap -> {
+//            ChatSDK.currentUser().setMetaString("Test", "Data");
+//            ChatSDK.core().pushUser().subscribe();
+            System.out.println("");
+        }), HookEvent.DidAuthenticate);
 
         FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(true);
         FirebaseCrashlytics.getInstance().log("Start");
