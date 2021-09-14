@@ -9,6 +9,7 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
+import firestream.chat.namespace.Fire;
 import io.reactivex.disposables.Disposable;
 import sdk.chat.android.live.R;
 import sdk.chat.core.hook.Executor;
@@ -17,10 +18,6 @@ import sdk.chat.core.hook.HookEvent;
 import sdk.chat.core.session.ChatSDK;
 import sdk.chat.core.utils.Device;
 import sdk.chat.firebase.adapter.module.FirebaseModule;
-import sdk.chat.firebase.push.FirebasePushModule;
-import sdk.chat.firebase.ui.FirebaseUIModule;
-import sdk.chat.firebase.upload.FirebaseUploadModule;
-//import sdk.chat.profile.pictures.ProfilePicturesModule;
 import sdk.chat.ui.extras.ExtrasModule;
 import sdk.chat.ui.module.UIModule;
 
@@ -72,8 +69,8 @@ public class MainApplication extends Application {
                 )
 
                 // Add modules to handle file uploads, push notifications
-                .addModule(FirebaseUploadModule.shared())
-                .addModule(FirebasePushModule.shared())
+//                .addModule(FirebaseUploadModule.shared())
+//                .addModule(FirebasePushModule.shared())
 //                .addModule(ProfilePicturesModule.shared())
 //                .addModule()
 
@@ -85,14 +82,16 @@ public class MainApplication extends Application {
 
 
 
-                .addModule(FirebaseUIModule.builder()
-                        .setProviders(EmailAuthProvider.PROVIDER_ID, PhoneAuthProvider.PROVIDER_ID)
-                        .build()
-                )
+//                .addModule(FirebaseUIModule.builder()
+//                        .setProviders(EmailAuthProvider.PROVIDER_ID, PhoneAuthProvider.PROVIDER_ID)
+//                        .build()
+//                )
 
                 // Activate
                 .build()
                 .activate(this);
+
+//        Fire.stream().isInitialized();
 
 
         Disposable d = ChatSDK.events().sourceOnMain().subscribe(networkEvent -> {

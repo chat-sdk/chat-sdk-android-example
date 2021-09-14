@@ -86,7 +86,7 @@ android {
 dependencies {
 
     implementation "sdk.chat:firebase-app:$CHAT_SDK_DEMO_VERSION"
-
+    implementation "sdk.chat:firestream:$CHAT_SDK_DEMO_VERSION"
 
 //    implementation "sdk.chat:mod-profile-pictures:5.1.8"  //Allow users to have multiple profile pictures
 //    implementation "sdk.chat:mod-ui-extras:5.1.8" // Enable drawer mode
