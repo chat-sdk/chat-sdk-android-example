@@ -11,7 +11,6 @@ android {
 
         multiDexEnabled = true
         minSdkVersion Integer.parseInt(project.MIN_SDK)
-        targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_SDK_VERSION)
 
         versionName CHAT_SDK_VERSION
         versionCode CHAT_SDK_BUILD_NUMBER as int
@@ -41,11 +40,11 @@ android {
 //            zipAlignEnabled true
 //        }
         debug {
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             debuggable true
             jniDebuggable true
             ext.alwaysUpdateBuildId = false
-            minifyEnabled true
+            minifyEnabled false
         }
     }
 
@@ -86,16 +85,8 @@ android {
 dependencies {
 
     implementation "sdk.chat:firebase-app:$CHAT_SDK_DEMO_VERSION"
+    implementation "sdk.chat:xmpp-app:$CHAT_SDK_DEMO_VERSION"
     implementation "sdk.chat:firestream:$CHAT_SDK_DEMO_VERSION"
-
-//    implementation "sdk.chat:mod-profile-pictures:5.1.8"  //Allow users to have multiple profile pictures
-//    implementation "sdk.chat:mod-ui-extras:5.1.8" // Enable drawer mode
-//    implementation "sdk.chat:pro-message-video:5.1.8"
-//
-//    implementation "sdk.chat:pro-firebase-read-receipts:5.1.8"
-//    implementation "sdk.chat:pro-firebase-typing-indicator:5.1.8"
-
-//    api project(':chat-sdk-demo')
 
     // Recommended: Add the Firebase SDK for Google Analytics.
     implementation "com.google.firebase:firebase-analytics:$firebaseAnalyticsVersion"

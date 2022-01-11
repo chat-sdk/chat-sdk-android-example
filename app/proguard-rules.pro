@@ -1,14 +1,21 @@
 # ChatSDK
--keep public class sdk.chat.**, sdk.guru.**, firestream.chat.**, app.xmpp.**, co.chatsdk.** {
+-keep public class sdk.chat.**, sdk.guru.**, firestream.chat.**, app.xmpp.**, co.chatsdk.**, org.jivesoftware.**, org.bouncycastle.jcajce.provider.**, **.R$*  {
     public protected *;
-}
-
--keep class org.ocpsoft.prettytime.i18n.**
-
--keep class .R
--keep class **.R$* {
     <fields>;
 }
+
+#-keep class org.ocpsoft.prettytime.i18n.**
+#
+#-keep class .R
+#-keep class **.R$* {
+#    <fields>;
+#}
+
+#-keepnames class ** { *; }
+#-keepparameternames
+#-keeppackagenames
+#-keep class org.bouncycastle.jcajce.provider.** { *; }
+
 # End
 
 #-keepparameternames

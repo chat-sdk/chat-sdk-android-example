@@ -4,96 +4,36 @@ import org.gradle.internal.os.OperatingSystem
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.2'
-        classpath "com.google.gms:google-services:4.3.5"
+        classpath 'com.android.tools.build:gradle:4.1.3'
+        classpath "com.google.gms:google-services:4.3.10"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.72"
         classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.1'
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.5.0'
-        classpath 'com.google.firebase:perf-plugin:1.3.4'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.8.1'
+        classpath 'com.google.firebase:perf-plugin:1.4.0'
     }
 }
 
 ext {
-    bintrayVersion = "1.8.4"
-    mavenGradleVersion = "2.1"
-    androidxAppcompatVersion = "1.1.0"
-    androidxConstraintLayoutVersion = "2.1.0-alpha2"
-    androidxLifecycleExtensionsVersion = "2.2.0"
-    androidxRecyclerViewVersion = "1.1.0"
-    androidxMultidexVersion = "2.0.1"
-    materialVersion = "1.2.1"
-    playAuthVersion = "17.0.0"
-    playMapsVersion = "17.0.0"
-    playLocationVersion = "17.0.0"
-    firebaseUiVersion = "7.1.1"
-    firebaseCoreVersion = "17.4.1"
-    firebaseDatabaseVersion = "19.6.0"
-    firebaseFirestoreVersion = "22.0.1"
-    firebaseAuthVersion = "20.0.1"
-    firebaseStorageVersion = "19.2.1"
-    firebaseMessagingVersion = "21.0.1"
-    firebaseFunctionsVersion = "19.2.0"
-    firebasePerformanceVersion = "19.0.11"
-    firebaseCrashlyticsVersion = "17.3.0"
-    firebaseAnalyticsVersion = "18.0.0"
-    greenDaoVersion = "3.3.0"
-    frescoVersion = "1.13.0"
-    rxJavaVersion = "2.2.17"
-    rxAndroidVersion = "2.1.1"
-    rxRelayVersion = "2.1.1"
-    rxQueueVersion = "2.0.0"
-    compressorVersion = "2.1.0"
-    okHttpVersion = "3.11.0"
-//    okHttpVersion = "4.7.2"
-    okHttpDownloaderVersion = "1.1.0"
-    prettyTimeVersion = "4.0.1.Final"
-    imageCropperVersion = "2.8.0"
-    photoViewVersion = "2.3.0"
-    androidDatabaseSQLCipher = "4.3.0"
-    matisseVersion = "0.5.3-beta3b1"
-    chatKitVersion = "0.3.3b11"
-    shapeImageViewVersion = "0.9.+@aar"
-    circleImageViewVersion = "3.1.0"
-    dexterVersion = "6.0.2"
-    tinyLogVersion = "1.3.6"
-    butterKnifeVersion = "10.2.1"
 
-    iconicsVersion = "5.0.0-a01"
-    materialDrawerVersion = "8.0.0-a07"
-
-    iconicsGoogleMaterialIconsVersion = "3.0.1.4.original-kotlin@aar"
-    iconicsFontAwesomeTypefaceVersion = "5.3.1.2-kotlin@aar"
-    materialSearchVersion = "1.4.0"
-    materialSpinnerVersion = "1.3.1"
-    keyboardVisibilityEventVersion = "3.0.0-RC2"
-    androidAudioRecorderVersion = "0.3.0"
-    glideVersion = "4.11.0"
-    exoplayerVersion = "2.11.3"
-    androidAudioConverterVersion = "0.0.8"
-    gsonVersion = "2.8.6"
-
-    // Used by file messages
-    androidNetworkingVersion = "1.0.2"
-    pdfiumVersion = "1.9.0"
-
-    smackVersion = "4.3.4"
-//    smackVersion = "4.4.0"
-    activity_ktx_version = "1.2.0"
-
+    firebasePerformanceVersion = "20.0.4"
+    firebaseCrashlyticsVersion = "18.2.6"
+    firebaseAnalyticsVersion = "20.0.2"
 }
 
 allprojects {
     repositories {
         google()
         mavenCentral()
-        jcenter()
+
         maven { url 'https://jitpack.io' }
         maven { url "https://chatsdk.jfrog.io/artifactory/release/chat-sdk-android" }
         maven { url "https://chatsdk.jfrog.io/artifactory/release/chatkit" }
         maven { url "https://chatsdk.jfrog.io/artifactory/release/matisse" }
+        maven { url "https://chatsdk.jfrog.io/artifactory/release/material-search-view" }
+        maven { url "https://chatsdk.jfrog.io/artifactory/release/android-image-cropper" }
     }
 }
 
