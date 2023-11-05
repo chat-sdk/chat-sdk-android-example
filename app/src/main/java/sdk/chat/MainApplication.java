@@ -194,7 +194,7 @@ public class MainApplication extends Application {
 //                .addModule()
 
                 .addModule(ExtrasModule.builder(config -> {
-                    if (Device.honor(this)) {
+                    if (Device.honor()) {
                         config.setDrawerEnabled(false);
                     }
                 }))

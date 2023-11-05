@@ -1,49 +1,16 @@
-# ChatSDK
--keep public class sdk.chat.**, sdk.guru.**, firestream.chat.**, app.xmpp.**, co.chatsdk.**, org.jivesoftware.**, org.bouncycastle.jcajce.provider.**, **.R$*  {
+
+-keep public class org.bouncycastle.jcajce.provider.**, org.jivesoftware.**, app.xmpp.**, sdk.chat.**, firestream.chat.**, sdk.guru.**, co.chatsdk.** {
     public protected *;
+}
+-keep class **.R$* {
     <fields>;
 }
 
-#-keep class org.ocpsoft.prettytime.i18n.**
-#
-#-keep class .R
-#-keep class **.R$* {
-#    <fields>;
-#}
+-keep public class smartadapter.**, materialsearchview.**, org.ocpsoft.prettytime.** {
+    public protected *;
+}
 
-#-keepnames class ** { *; }
-#-keepparameternames
-#-keeppackagenames
-#-keep class org.bouncycastle.jcajce.provider.** { *; }
+-keepnames class org.kxml2.io.**, org.xmlpull.** {
+    public protected *;
+}
 
-# End
-
-#-keepparameternames
-#-keeppackagenames
-#-renamesourcefileattribute SourceFile
-#-keepattributes Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,*Annotation*,EnclosingMethod
-#
-#-keepclasseswithmembernames,includedescriptorclasses class sdk.chat.**, sdk.guru.**, firestream.chat.**, app.xmpp.**, co.chatsdk.** {
-#    native <methods>;
-#}
-#
-#-keepclassmembers,allowoptimization enum sdk.chat.**, sdk.guru.**, firestream.chat.**, app.xmpp.**, co.chatsdk.** {
-#    public static **[] values();
-#    public static ** valueOf(java.lang.String);
-#}
-#
-#-keepclassmembers class sdk.chat.**, sdk.guru.**, firestream.chat.**, app.xmpp.**, co.chatsdk.** implements java.io.Serializable {
-#    static final long serialVersionUID;
-#    private static final java.io.ObjectStreamField[] serialPersistentFields;
-#    private void writeObject(java.io.ObjectOutputStream);
-#    private void readObject(java.io.ObjectInputStream);
-#    java.lang.Object writeReplace();
-#    java.lang.Object readResolve();
-#}
-
-#-keepattributes InnerClasses
-# -keep class **.R
-# -keep class **.R$* {
-#    <fields>;
-#}
-# End

@@ -7,12 +7,12 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.3'
-        classpath "com.google.gms:google-services:4.3.10"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.72"
-        classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.1'
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.8.1'
-        classpath 'com.google.firebase:perf-plugin:1.4.0'
+        classpath 'com.android.tools.build:gradle:7.3.1'
+        classpath "com.google.gms:google-services:4.3.14"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20"
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.2'
+        classpath 'com.google.firebase:perf-plugin:1.4.2'
+        classpath "org.greenrobot:greendao-gradle-plugin:3.3.0"
     }
 }
 
@@ -29,11 +29,11 @@ allprojects {
         mavenCentral()
 
         maven { url 'https://jitpack.io' }
-        maven { url "https://chatsdk.jfrog.io/artifactory/release/chat-sdk-android" }
-        maven { url "https://chatsdk.jfrog.io/artifactory/release/chatkit" }
-        maven { url "https://chatsdk.jfrog.io/artifactory/release/matisse" }
-        maven { url "https://chatsdk.jfrog.io/artifactory/release/material-search-view" }
-        maven { url "https://chatsdk.jfrog.io/artifactory/release/android-image-cropper" }
+//        maven { url "https://chatsdk.jfrog.io/artifactory/release/chat-sdk-android" }
+//        maven { url "https://chatsdk.jfrog.io/artifactory/release/chatkit" }
+//        maven { url "https://chatsdk.jfrog.io/artifactory/release/matisse" }
+//        maven { url "https://chatsdk.jfrog.io/artifactory/release/material-search-view" }
+//        maven { url "https://chatsdk.jfrog.io/artifactory/release/android-image-cropper" }
     }
 }
 
